@@ -31,7 +31,7 @@ function App() {
       // Formateando url
       const appId = 'caab06adecf5638c0c1e6f6fb28d800f';
       const url = `http://api.openweathermap.org/data/2.5/weather?`
-        + `q=${ciudad},${ciudad}&appid=${appId}`;
+        + `q=${ciudad},${pais}&appid=${appId}`;
       
       // Obteniendo respuesta
       const respuesta = await fetch(url);
