@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 import Header from './components/Header';
 import Formulario from './components/Formulario';
 import Clima from './components/Clima';
+import Error from './components/Error';
 
 function App() {
 
@@ -16,6 +17,9 @@ function App() {
 
   // State para el resultado de la API
   const [resultado, guardarResultado] = useState({});
+
+  // State para manejar error 404
+  const [error, guardarError] = useState(false);
 
   // extraer ciudad y pais
   const { ciudad, pais } = busqueda;
@@ -42,11 +46,25 @@ function App() {
       
       // Restablecer state para consultar
       guardarConsultar(false);
-    }
 
+      // Capturando error 404
+      if(resultado.cod === "404") {
+        guardarError(true);
+      } else {
+        guardarError(false);
+      }
+    }
     // Invocando función para consultar api
     consultarAPI();
-  }, [consultar])
+  }, [consultar]);
+
+  // Manejando error 404
+  let componente;
+  if(error) {
+    componente = <Error mensaje="No hay resultados" />
+  } else {
+    componente = <Clima resultado={resultado} />
+  }
 
   return (
     <Fragment>
@@ -65,9 +83,7 @@ function App() {
               />
             </div>
             <div className="col m6 s12">
-              <Clima
-                resultado={resultado}
-              />
+              {componente}
             </div>
           </div>
         </div>

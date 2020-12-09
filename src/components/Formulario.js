@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Error from './Error';
 
 const Formulario = ({ busqueda, guardarBusqueda, guardarConsultar }) => {
 
@@ -37,7 +38,7 @@ const Formulario = ({ busqueda, guardarBusqueda, guardarConsultar }) => {
     >
         {
           error 
-          ? <p className="red darken-4 error">Todos los campos son obligatorios</p>
+          ? <Error mensaje="Todos los campos son obligatorios" />
           : null
         }
 
