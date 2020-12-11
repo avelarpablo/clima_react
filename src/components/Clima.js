@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { obtenerCentigrados } from '../helpers';
 
 const Clima = ({ resultado }) => {
@@ -29,5 +30,10 @@ const Clima = ({ resultado }) => {
     </div>
   );
 }
- 
+
+// Documentación
+Clima.propTypes = {
+  resultado: PropTypes.object.isRequired
+}
+
 export default Clima;

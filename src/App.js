@@ -56,6 +56,8 @@ function App() {
     }
     // Invocando función para consultar api
     consultarAPI();
+
+    // eslint-disable-next-line
   }, [consultar]);
 
   // Manejando error 404
