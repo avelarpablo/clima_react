@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Information of API
+PP3uvwpmjkKjGfni
+caab06adecf5638c0c1e6f6fb28d800f
+
+api.openweathermap.org/data/2.5/weather?q=Sonsonate,SV&appid=caab06adecf5638c0c1e6f6fb28d800f
